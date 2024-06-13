@@ -29,11 +29,10 @@ def trasferDataToGoogleSheet():
             update_cell(cell='A3',data=title,sheetname='Champions DashBoard')
             update_cell(cell='A200',data=sub_title,sheetname='DashBoard')
             # Condtion 1
-            conditionName = "Champions Swing" # change name Here
+            conditionName = "Champions Intraday" # change name Here
             conditionNameLocation = "A4"
             # Put condition here
-            
-            CONDITION1 = {"scan_clause": "( {cash} ( ( {cash} ( ( {57960} ( ( {cash} ( latest cci( 20 ) >= -100 and weekly cci( 20 ) >= -150 and latest rsi( 14 ) > 30 and weekly rsi( 14 ) >= 45 and monthly rsi( 14 ) >= 50 and market cap > 250 and latest obv >= [0] 4 hour obv and latest macd line( 13 , 8 , 5 ) >= [0] 4 hour macd line( 13 , 8 , 5 ) and weekly obv >= 1 week ago obv and latest avg true range( 14 ) >= 1 day ago avg true range( 14 ) and weekly avg true range( 14 ) >= 1 week ago avg true range( 14 ) and latest rsi( 14 ) >= 1 day ago rsi( 14 ) ) ) ) ) ) ) ) )"}
+            CONDITION1 = {"scan_clause": "( {cash} ( ( {57960} ( ( {cash} ( latest cci( 20 ) >= -100 and weekly cci( 20 ) >= -150 and latest rsi( 14 ) > 30 and weekly rsi( 14 ) >= 45 and monthly rsi( 14 ) >= 50 and market cap > 250 and latest obv >= [0] 4 hour obv and latest macd line( 13 , 8 , 5 ) >= [0] 5 minute macd line( 13 , 8 , 5 ) and weekly obv >= 1 week ago obv and latest avg true range( 14 ) >= 1 day ago avg true range( 14 ) and weekly avg true range( 14 ) >= 1 week ago avg true range( 14 ) and latest rsi( 14 ) >= 1 day ago rsi( 14 ) ) ) ) ) ) )"}
             # 
             row_to_start ='A3'
             row_to_clean = 'A3:D'
@@ -43,9 +42,8 @@ def trasferDataToGoogleSheet():
         # Condtion 2
         try:
             # Condtion 2
-            conditionName = "Champions Intraday" # change name Here
-           
-            CONDITION2 = {"scan_clause": "( {cash} ( ( {57960} ( ( {cash} ( latest cci( 20 ) >= -100 and weekly cci( 20 ) >= -150 and latest rsi( 14 ) > 30 and weekly rsi( 14 ) >= 45 and monthly rsi( 14 ) >= 50 and market cap > 250 and latest obv >= [0] 4 hour obv and latest macd line( 13 , 8 , 5 ) >= [0] 5 minute macd line( 13 , 8 , 5 ) and weekly obv >= 1 week ago obv and latest avg true range( 14 ) >= 1 day ago avg true range( 14 ) and weekly avg true range( 14 ) >= 1 week ago avg true range( 14 ) and latest rsi( 14 ) >= 1 day ago rsi( 14 ) ) ) ) ) ) )"}
+            conditionName = "Champions Swing" # change name Here
+            CONDITION2 = {"scan_clause": "( {cash} ( ( {cash} ( ( {57960} ( ( {cash} ( latest cci( 20 ) >= -100 and weekly cci( 20 ) >= -150 and latest rsi( 14 ) > 30 and weekly rsi( 14 ) >= 45 and monthly rsi( 14 ) >= 50 and market cap > 250 and latest obv >= [0] 4 hour obv and latest macd line( 13 , 8 , 5 ) >= [0] 4 hour macd line( 13 , 8 , 5 ) and weekly obv >= 1 week ago obv and latest avg true range( 14 ) >= 1 day ago avg true range( 14 ) and weekly avg true range( 14 ) >= 1 week ago avg true range( 14 ) and latest rsi( 14 ) >= 1 day ago rsi( 14 ) ) ) ) ) ) ) ) )"}
             row_to_start ='F3'
             row_to_clean = "F3:I"
             conditionNameLocation = "E4"
