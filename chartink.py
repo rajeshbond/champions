@@ -43,7 +43,7 @@ def trasferDataToGoogleSheet():
         try:
             # Condtion 2
             conditionName = "Champions Swing" # change name Here
-            CONDITION2 = {"scan_clause": "( {cash} ( ( {cash} ( ( {57960} ( ( {cash} ( latest cci( 20 ) >= -100 and weekly cci( 20 ) >= -150 and latest rsi( 14 ) > 30 and weekly rsi( 14 ) >= 45 and monthly rsi( 14 ) >= 50 and market cap > 250 and latest obv >= [0] 4 hour obv and latest macd line( 13 , 8 , 5 ) >= [0] 4 hour macd line( 13 , 8 , 5 ) and weekly obv >= 1 week ago obv and latest avg true range( 14 ) >= 1 day ago avg true range( 14 ) and weekly avg true range( 14 ) >= 1 week ago avg true range( 14 ) and latest rsi( 14 ) >= 1 day ago rsi( 14 ) ) ) ) ) ) ) ) )"}
+            CONDITION2 = {"scan_clause": "( {cash} ( ( {cash} ( ( {57960} ( ( {cash} ( latest cci( 20 ) >= 0 and weekly cci( 20 ) >= -150 and latest rsi( 14 ) > 30 and weekly rsi( 14 ) >= 45 and monthly rsi( 14 ) >= 50 and market cap > 250 and latest obv >= [0] 4 hour obv and latest macd line( 13 , 8 , 5 ) >= [0] 4 hour macd line( 13 , 8 , 5 ) and weekly obv >= 1 week ago obv and latest avg true range( 14 ) >= [0] 4 hour avg true range( 14 ) and weekly avg true range( 14 ) >= 1 week ago avg true range( 14 ) and earning per share[eps] > prev year eps ) ) ) ) ) ) ) )"}
             row_to_start ='F3'
             row_to_clean = "F3:I"
             conditionNameLocation = "E4"
@@ -62,27 +62,27 @@ def trasferDataToGoogleSheet():
         except Exception as e:
             print(e)
         # Condtion 4    
-        # try:
-        #     # condition 4
-        #     conditionName = "SUPER HERO BOTTOM SUPPORT"
-        #     CONDITION4 = {"scan_clause": "( {cash} ( ( {57960} ( ( {57960} ( latest close > latest sma( latest close , 200 ) and latest close >= latest sma( latest vwap , 200 ) and 1 day ago close < latest sma( latest close , 200 ) and 2 days ago close < latest sma( latest close , 200 ) and 3 days ago close < latest sma( latest close , 200 ) and 4 days ago close < latest sma( latest close , 200 ) and latest volume >= 200000 and latest close >= 20 and latest obv >= latest sma( latest obv , 21 ) ) ) or( {57960} ( latest close < latest sma( latest close , 200 ) and 1 day ago close > latest sma( latest close , 200 ) and 2 days ago close > latest sma( latest close , 200 ) and 3 days ago close > latest sma( latest close , 200 ) and 4 days ago close > latest sma( latest close , 200 ) and latest volume >= 200000 and latest close >= 20 and latest obv <= latest sma( latest obv , 21 ) ) ) ) ) ) )"}
-        #     row_to_start ='P3'
-        #     row_to_clean = "P3:S"
-        #     conditionNameLocation = "M4"
-        #     chartinkLogicBankend(condition=CONDITION4,row_to_start=row_to_start,row_to_clean= row_to_clean,sheetname='Hello World',conditionName=conditionName,conditionNameLocation=conditionNameLocation)
-        # except Exception as e:
-        #     print(e) 
-        # # Condtion 5    - Stopped by User
-        # try:
-        #     # condition 5
-        #     conditionName = "SUPER HERO PULL BACK"
-        #     CONDITION5 = {"scan_clause": "( {57960} ( monthly rsi( 14 ) >= 60 and weekly rsi( 14 ) >= 60 and latest rsi( 14 ) >= 40 and latest rsi( 14 ) <= 45 ) )"}
-        #     row_to_start ='U3'
-        #     row_to_clean = "U3:X"
-        #     conditionNameLocation = "Q4"
-        #     chartinkLogicBankend(condition=CONDITION5,row_to_start=row_to_start,row_to_clean= row_to_clean,sheetname='Hello World',conditionName=conditionName,conditionNameLocation=conditionNameLocation)
-        # except Exception as e:
-        #     print(e)
+        try:
+            # condition 4
+            conditionName = "Champions Reversal Stocks"
+            CONDITION4 = {"scan_clause": "( {cash} ( latest cci( 20 ) <= -75 and weekly cci( 20 ) >= latest cci( 20 ) and weekly obv >= latest obv and weekly obv >= latest obv and market cap >= 250 ) ) "}
+            row_to_start ='P3'
+            row_to_clean = "P3:S"
+            conditionNameLocation = "M4"
+            chartinkLogicBankend(condition=CONDITION4,row_to_start=row_to_start,row_to_clean= row_to_clean,sheetname='Hello World',conditionName=conditionName,conditionNameLocation=conditionNameLocation)
+        except Exception as e:
+            print(e) 
+        # Condtion 5    - Stopped by User
+        try:
+            # condition 5
+            conditionName = "Nifty 50 heat map"
+            CONDITION5 = {"scan_clause": "( {33492} ( latest volume > 1 ) )"}
+            row_to_start ='U3'
+            row_to_clean = "U3:X"
+            conditionNameLocation = "Q4"
+            chartinkLogicBankend(condition=CONDITION5,row_to_start=row_to_start,row_to_clean= row_to_clean,sheetname='Hello World',conditionName=conditionName,conditionNameLocation=conditionNameLocation)
+        except Exception as e:
+            print(e)
         # Condtion 6    - Stopped by User
         # try:
         #     # condition 6
