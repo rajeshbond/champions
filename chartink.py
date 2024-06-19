@@ -113,7 +113,7 @@ def trasferDataToGoogleSheet():
             CONDITION8 = {"scan_clause": "( {33492} ( latest volume > 1 ) )"}
             row_to_start ='AJ3'
             row_to_clean = "AJ3:AM"
-            conditionNameLocation = "N16"
+            conditionNameLocation = "AN4"
             chartinkLogicBankend(condition=CONDITION8,row_to_start=row_to_start,row_to_clean= row_to_clean,sheetname='Hello World',conditionName=conditionName,conditionNameLocation=conditionNameLocation)
         except Exception as e:
             print(e)
