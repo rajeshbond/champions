@@ -76,7 +76,7 @@ def trasferDataToGoogleSheet():
         try:
             # condition 5
             conditionName = "Champions Over Brought"
-            CONDITION5 = {"scan_clause": "( {57960} ( latest cci( 20 ) < 1 day ago cci( 20 ) and latest obv < 1 day ago obv and latest macd line( 26 , 12 , 9 ) < 1 day ago macd line( 26 , 12 , 9 ) and weekly obv < 1 week ago obv and monthly obv < 1 month ago obv and weekly cci( 20 ) < 1 week ago cci( 20 ) and monthly cci( 20 ) < 1 month ago cci( 20 ) and [0] 1 hour close < 1 day ago high and latest open < 1 day ago high ) )"}
+            CONDITION5 = {"scan_clause": "( {33489} ( latest cci( 20 ) < 1 day ago cci( 20 ) and latest obv < 1 day ago obv and latest macd line( 26 , 12 , 9 ) < 1 day ago macd line( 26 , 12 , 9 ) and weekly obv < 1 week ago obv and monthly obv < 1 month ago obv and weekly cci( 20 ) < 1 week ago cci( 20 ) and monthly cci( 20 ) < 1 month ago cci( 20 ) and [0] 30 minute close < 1 day ago high and latest open < 1 day ago high and latest close >= 750 ) )"}
             row_to_start ='U3'
             row_to_clean = "U3:X"
             conditionNameLocation = "Q4"
