@@ -76,7 +76,7 @@ def trasferDataToGoogleSheet():
         try:
             # condition 5
             conditionName = "Champions Over Brought"
-            CONDITION5 = {"scan_clause": "( {33489} ( latest cci( 20 ) < 1 day ago cci( 20 ) and latest obv < 1 day ago obv and latest macd line( 26 , 12 , 9 ) < 1 day ago macd line( 26 , 12 , 9 ) and weekly obv < 1 week ago obv and monthly obv < 1 month ago obv and weekly cci( 20 ) < 1 week ago cci( 20 ) and monthly cci( 20 ) < 1 month ago cci( 20 ) and [0] 30 minute close < 1 day ago high and latest open < 1 day ago high and latest close >= 750 ) )"}
+            CONDITION5 = {"scan_clause": "( {33489} ( latest cci( 20 ) <= 1 day ago cci( 20 ) and latest obv < 1 day ago obv and latest macd line( 26 , 12 , 9 ) < 1 day ago macd line( 26 , 12 , 9 ) and weekly obv < 1 week ago obv and monthly obv < 1 month ago obv and weekly cci( 20 ) < 1 week ago cci( 20 ) and monthly cci( 20 ) < 1 month ago cci( 20 ) and [0] 30 minute close < 1 day ago close ) )"}
             row_to_start ='U3'
             row_to_clean = "U3:X"
             conditionNameLocation = "Q4"
@@ -107,16 +107,16 @@ def trasferDataToGoogleSheet():
         # except Exception as e:
         #     print(e)
         # # Condtion 8    - Stopped by User
-        try:
-            # condition 8
-            conditionName = "NIFTY 50"
-            CONDITION8 = {"scan_clause": "( {33492} ( latest volume > 1 ) )"}
-            row_to_start ='AJ3'
-            row_to_clean = "AJ3:AM"
-            conditionNameLocation = "AN4"
-            chartinkLogicBankend(condition=CONDITION8,row_to_start=row_to_start,row_to_clean= row_to_clean,sheetname='Hello World',conditionName=conditionName,conditionNameLocation=conditionNameLocation)
-        except Exception as e:
-            print(e)
+        # try:
+        #     # condition 8
+        #     conditionName = "NIFTY 50"
+        #     CONDITION8 = {"scan_clause": "( {33492} ( latest volume > 1 ) )"}
+        #     row_to_start ='AJ3'
+        #     row_to_clean = "AJ3:AM"
+        #     conditionNameLocation = "AN4"
+        #     chartinkLogicBankend(condition=CONDITION8,row_to_start=row_to_start,row_to_clean= row_to_clean,sheetname='Hello World',conditionName=conditionName,conditionNameLocation=conditionNameLocation)
+        # except Exception as e:
+        #     print(e)
         # print(market)    
         if(market == 'Closed' or market == "Close"):
             count +=1
