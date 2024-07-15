@@ -16,7 +16,9 @@ def trasferDataToGoogleSheet():
     # Initialize prev_data as None before the loop
     print("started")
     count = 0
+    test =1
     while True:
+        test = 0
 
         market = maketStatus()
        
@@ -65,7 +67,8 @@ def trasferDataToGoogleSheet():
         try:
             # condition 4
             conditionName = "Champions Reversal Stocks"
-            CONDITION4 = {"scan_clause": "( {cash} ( 1 day ago cci( 20 ) <= -100 and latest cci( 20 ) >= 1 day ago cci( 20 ) and market cap >= 250 ) )"}
+            CONDITION4 = {"scan_clause":"( {cash} ( 1 day ago cci( 20 ) <= -100 and latest cci( 20 ) >= 1 day ago cci( 20 ) and market cap >= 250 and latest close >= 1 day ago close and latest macd line( 26 , 12 , 9 ) >= [0] 4 hour macd line( 26 , 12 , 9 ) and latest obv >= 1 day ago obv ) )"}
+            # CONDITION4 = {"scan_clause": "( {cash} ( 1 day ago cci( 20 ) <= -100 and latest cci( 20 ) >= 1 day ago cci( 20 ) and market cap >= 250 ) )"}
             row_to_start ='P3'
             row_to_clean = "P3:S"
             conditionNameLocation = "M4"
@@ -83,6 +86,7 @@ def trasferDataToGoogleSheet():
             chartinkLogicBankend(condition=CONDITION5,row_to_start=row_to_start,row_to_clean= row_to_clean,sheetname='Hello World',conditionName=conditionName,conditionNameLocation=conditionNameLocation)
         except Exception as e:
             print(e)
+
         # Condtion 6    - Stopped by User
         # try:
         #     # condition 6

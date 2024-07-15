@@ -24,6 +24,7 @@ def  chartinkLogicBankend(condition,row_to_start,row_to_clean,sheetname,conditio
                 data = responseData_scan1.json()
                 stock = data['data']
                 stock_list = pd.DataFrame(stock)
+                # print(f"---------====={conditionName}------------")
                 # print(stock_list)
                 if stock_list.empty:
                      time.sleep(10)
