@@ -67,7 +67,8 @@ def trasferDataToGoogleSheet():
         try:
             # condition 4
             conditionName = "Champions Reversal Stocks"
-            CONDITION4 = {"scan_clause":"( {cash} ( 1 day ago cci( 20 ) <= -100 and latest cci( 20 ) >= 1 day ago cci( 20 ) and market cap >= 250 and latest close >= 1 day ago close and latest macd line( 26 , 12 , 9 ) >= [0] 4 hour macd line( 26 , 12 , 9 ) and latest obv >= 1 day ago obv ) )"}
+            CONDITION4 = {"scan_clause":"( {cash} ( 1 day ago cci( 20 ) <= -100 and latest cci( 20 ) >= 1 day ago cci( 20 ) and market cap >= 250 and latest close >= 1 day ago close and latest macd line( 26 , 12 , 9 ) >= [0] 4 hour macd line( 26 , 12 , 9 ) and latest obv >= 1 day ago obv and latest rsi( 14 ) >= 1 day ago rsi( 14 ) and latest adx di negative( 14 ) <= 1 day ago adx di negative( 14 ) and latest accdist  >= 1 day ago accdist  ) )"}
+            # CONDITION4 = {"scan_clause":"( {cash} ( 1 day ago cci( 20 ) <= -100 and latest cci( 20 ) >= 1 day ago cci( 20 ) and market cap >= 250 and latest close >= 1 day ago close and latest macd line( 26 , 12 , 9 ) >= [0] 4 hour macd line( 26 , 12 , 9 ) and latest obv >= 1 day ago obv ) )"}
             # CONDITION4 = {"scan_clause": "( {cash} ( 1 day ago cci( 20 ) <= -100 and latest cci( 20 ) >= 1 day ago cci( 20 ) and market cap >= 250 ) )"}
             row_to_start ='P3'
             row_to_clean = "P3:S"
