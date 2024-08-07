@@ -24,17 +24,18 @@ def  chartinkLogicBankend(condition,row_to_start,row_to_clean,sheetname,conditio
                 data = responseData_scan1.json()
                 stock = data['data']
                 stock_list = pd.DataFrame(stock)
-                # print(f"---------====={conditionName}------------")
-                # print(stock_list)
+                print(f"---------====={conditionName}------------")
+                print(stock_list)
                 if stock_list.empty:
                      time.sleep(10)
                      clean_up(range_to_clear=row_to_clean,sheetname=sheetname)
                      print("no data")
                      return
-              
+                
                 stock_list_sorted = stock_list.sort_values(by='per_chg', ascending=False)
                 # update_cell(conditionNameLocation,conditionName,sheetname="DashBoard")   
                 update_google_sheet(row_to_start,stock_list_sorted[['nsecode','per_chg','close','volume']],range_to_clear=row_to_clean,sheetname=sheetname)
+                # stock_list_sorted.to_csv(f'champions-{conditionName}.csv',index=False)
             else:
                 print("no data")
                 
